@@ -1,5 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 
+import { freeDummyData } from "dummies/freeDummyData";
+import { partTimeDummyData } from "dummies/partTimeDummyData";
+
 interface Props {
   postData: {
     id: number;
@@ -16,19 +19,29 @@ export default function PostItems({ postData }: Props) {
 
   const handleClick = (type: string, id: number) => {
     if (type === undefined) {
-      navigate(`/community/free/${id}`);
+      navigate(`/community/free/${id}`, {
+        state: { postData: freeDummyData.find((item) => item.id === id) },
+      });
     } else {
-      navigate(`/community/${type}/${id}`);
+      if (type === "free") {
+        navigate(`/community/${type}/${id}`, {
+          state: { postData: freeDummyData.find((item) => item.id === id) },
+        });
+      } else {
+        navigate(`/community/${type}/${id}`, {
+          state: { postData: partTimeDummyData.find((item) => item.id === id) },
+        });
+      }
     }
   };
 
   return (
-    <div className="mt-4">
-      {postData.map((data) => (
+    <div className="p-4">
+      {postData.map((data, index) => (
         <div
           key={data.id}
-          className={`p-4 border-b-2 border-b-gray-500 ${
-            postData.length === data.id && "border-b-0"
+          className={`p-4 px-2 border-b-2 border-b-gray-500 ${
+            index === postData.length - 1 ? "border-b-0" : ""
           }`}
           onClick={() => handleClick(type, data.id)}
         >
