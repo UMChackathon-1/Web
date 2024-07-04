@@ -13,8 +13,8 @@ interface CardProps {
 export default function Document() {
   return (
     <div>
-      <BackButton />
-      <div className="flex flex-wrap gap-1 mt-5 justify-center">
+      <BackButton mx={4} />
+      <div className="grid grid-cols-3 gap-1 mt-5 px-2">
         {forms.map((item, index) => {
           const props: CardProps = {
             title: item.name,

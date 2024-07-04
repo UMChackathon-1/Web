@@ -53,7 +53,7 @@ export default function Editform() {
 
   return (
     <>
-      <BackButton />
+      <BackButton mx={4} />
       <div
         className={`inline-block object-cover bg-cover relative`}
         style={{
@@ -63,9 +63,7 @@ export default function Editform() {
         }}
       ></div>
       <h1 className="text-[20px] mt-5 m-2 text-white">{forms[id].name}</h1>
-      <div className="text-[18px] text-white text-opacity-50 m-2">
-        @{forms[id].user}
-      </div>
+      <div className="text-[18px] text-white text-opacity-50 m-2">@{forms[id].user}</div>
       <form className="flex gap-2 flex-col mt-5 p-2">
         {forms[id].texts.map((text, index) => (
           <div key={index}>
@@ -86,9 +84,7 @@ export default function Editform() {
             />
           </div>
         ))}
-        <DownLoadButton func={onClickDownloadButton}>
-          이 정보로 템플릿 생성
-        </DownLoadButton>
+        <DownLoadButton func={onClickDownloadButton}>이 정보로 템플릿 생성</DownLoadButton>
       </form>
       {exports && (
         <div
