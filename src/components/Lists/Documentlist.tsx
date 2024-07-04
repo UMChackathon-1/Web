@@ -1,6 +1,5 @@
 import Card from "@components/home/Card";
 import BackButton from "@components/BackButton";
-
 import { forms } from "@assets/forms";
 interface CardProps {
   url: string;
