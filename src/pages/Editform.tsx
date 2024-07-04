@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import html2canvas from "html2canvas";
 import { forms } from "@assets/forms";
 import { useParams } from "react-router-dom";
+import { DownLoadButton } from "@components/Lists/DownLoadButton";
 
 export interface formProps {
   name: string;
@@ -82,13 +83,9 @@ export default function Editform() {
             />
           </div>
         ))}
-        <button
-          type="button"
-          onClick={onClickDownloadButton}
-          className="bg-[#8248F5] rounded-full mt-8 h-[44px] w-full text-white px-5 py-2 text-[20px]"
-        >
+        <DownLoadButton func={onClickDownloadButton}>
           이 정보로 템플릿 생성
-        </button>
+        </DownLoadButton>
       </form>
       {exports && (
         <div
