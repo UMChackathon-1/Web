@@ -1,8 +1,8 @@
-import { GetAxiosInstance } from "@axios/axios.method";
+import axios from "axios";
 
 export const getProfile = async () => {
   try {
-    const res = await GetAxiosInstance(`/profile`);
+    const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/profile`);
 
     console.log(res.data);
     return res.data;

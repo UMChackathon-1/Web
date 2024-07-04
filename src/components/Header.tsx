@@ -20,10 +20,15 @@ export default function Header() {
       </Link>
       <Link to="/profile">
         <div className="flex items-center">
-          <img src={profileData.imageUrl} />
-          <div className="text-white">
-            <span className="text-[#8248F5]">{profileData.nickname}</span>님
-            반가워요!
+          <img
+            src={profileData.imageUrl}
+            className="w-8 h-8 rounded-[32px] mr-2"
+          />
+          <div className="font-normal text-white">
+            <span className="text-[#8248F5] font-semibold">
+              {profileData.nickname}
+            </span>
+            님 반가워요!
           </div>
         </div>
       </Link>
