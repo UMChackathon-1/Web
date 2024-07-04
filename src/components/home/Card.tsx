@@ -9,7 +9,7 @@ interface CardProps {
 
 export default function Card({ url, title, likes, mr = 3 }: CardProps) {
   return (
-    <div className={`min-w-[122px] h-[148px] mr-${mr} bg-no-repeat`} style={{ backgroundImage: `url(${url})` }}>
+    <div className={`min-w-[122px] h-[148px] bg-no-repeat`} style={{ backgroundImage: `url(${url})`, marginRight: mr * 4 }}>
       <div className="flex flex-col text-white font-bold text-xs justify-between h-full">
         <div className="flex items-center gap-2 p-2">
           <ThumbsUpSvg />
