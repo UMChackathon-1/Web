@@ -17,9 +17,9 @@ export default function WritePost() {
   };
 
   return (
-    <div className="px-4">
+    <>
       <Header />
-      <div className="flex flex-col">
+      <div className="flex flex-col px-4">
         <div className="flex flex-col mb-8">
           <label htmlFor="title" className="pl-1 mb-3 text-white">
             제목을 입력해주세요
@@ -49,6 +49,6 @@ export default function WritePost() {
       <div className="float-end w-fit cursor-pointer px-6 py-2 bg-[#6B6AFF] text-white rounded-lg">
         작성하기
       </div>
-    </div>
+    </>
   );
 }

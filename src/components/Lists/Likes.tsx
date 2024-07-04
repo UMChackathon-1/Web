@@ -3,23 +3,23 @@ import ThumbsDownSvg from "@assets/thumbs-down-gray.svg";
 import DownloadSvg from "@assets/download-gray.svg";
 
 export const Likes = ({
-  likes,
-  dislikes,
-  downloads,
+  likeCount,
+  dislikeCount,
+  downloadCount,
 }: {
-  likes: number;
-  dislikes: number;
-  downloads: number;
+  likeCount: number;
+  dislikeCount: number;
+  downloadCount: number;
 }) => {
   const buttons = [
-    { num: likes, svg: ThumbsUpSvg },
-    { num: dislikes, svg: ThumbsDownSvg },
-    { num: downloads, svg: DownloadSvg },
+    { num: likeCount, svg: ThumbsUpSvg },
+    { num: dislikeCount, svg: ThumbsDownSvg },
+    { num: downloadCount, svg: DownloadSvg },
   ];
   return (
     <div className="flex gap-2 my-3">
       {buttons.map((item) => (
-        <div className="flex gap-1 flex-col items-center">
+        <div className="flex flex-col items-center gap-1">
           <item.svg />
           <div className="text-[14px] text-[#9797A8]">{item.num}</div>
         </div>

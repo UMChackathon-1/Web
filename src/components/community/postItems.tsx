@@ -1,3 +1,5 @@
+import { useNavigate, useParams } from "react-router-dom";
+
 interface Props {
   postData: {
     id: number;
@@ -9,6 +11,17 @@ interface Props {
 }
 
 export default function PostItems({ postData }: Props) {
+  const navigate = useNavigate();
+  const { type } = useParams<string>();
+
+  const handleClick = (type: string, id: number) => {
+    if (type === undefined) {
+      navigate(`/community/free/${id}`);
+    } else {
+      navigate(`/community/${type}/${id}`);
+    }
+  };
+
   return (
     <div className="mt-4">
       {postData.map((data) => (
@@ -17,6 +30,7 @@ export default function PostItems({ postData }: Props) {
           className={`p-4 border-b-2 border-b-gray-500 ${
             postData.length === data.id && "border-b-0"
           }`}
+          onClick={() => handleClick(type, data.id)}
         >
           <div className="text-base font-semibold text-white cursor-pointer hover:text-[#6B6AFF]">
             {data.title}

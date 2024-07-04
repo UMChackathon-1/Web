@@ -9,6 +9,7 @@ import Voice from "@pages/Voice";
 import Community from "@pages/Community";
 import Editform from "@pages/Editform";
 import WritePost from "@pages/WritePost";
+import PostDetail from "@pages/PostDetail";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/voice" element={<Voice />} />
       <Route path="/editform/:id" element={<Editform />} />
       <Route path="/community/:type" element={<Community />} />
+      <Route path="/community/:type/:id" element={<PostDetail />} />
       <Route path="/writepost/:type" element={<WritePost />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
