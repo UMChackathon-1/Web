@@ -25,15 +25,17 @@ const ttsItems = ["안녕하세요 어머니!!", "잘 놀다 갈게요~", "감�
 export default function Home() {
   return (
     <main>
-      <header className="flex justify-between px-4 items-center mb-9">
+      <header className="flex items-center justify-between px-4 mb-9">
         <Link to="/">
-          <h1 className="text-[#6B6AFF] text-xl font-semibold">Party Tonight</h1>
+          <h1 className="text-[#6B6AFF] text-xl font-semibold">
+            Party Tonight
+          </h1>
         </Link>
         <Link to="/profile">
           <ProfileSvg color="#6B6AFF" />
         </Link>
       </header>
-      <section className="px-4 flex flex-col gap-2 mb-12">
+      <section className="flex flex-col gap-2 px-4 mb-12">
         <Title title="외박 인증은 이 사진!" to="/photo" />
         <div className="flex flex-grow overflow-x-scroll">
           {outDoorItems.map((item) => (
@@ -41,7 +43,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="px-4 flex flex-col gap-2 mb-12">
+      <section className="flex flex-col gap-2 px-4 mb-12">
         <Title title="성실한 학생이라도 땡땡이가 필요해" to="/document" />
         <div className="flex flex-grow overflow-x-scroll">
           {documentItems.map((item) => (
@@ -49,17 +51,21 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="px-4 flex flex-col gap-2 mb-12">
+      <section className="flex flex-col gap-2 px-4 mb-12">
         <Title title="엄마한테 통화왔을 때 TTS" to="/voice" />
         {ttsItems.map((item) => (
-          <button onClick={() => speak(item)} key={item} className="flex justify-between px-4 py-2 w-full bg-[#D9D9D9] rounded-sm">
+          <button
+            onClick={() => speak(item)}
+            key={item}
+            className="flex justify-between px-4 py-2 w-full bg-[#D9D9D9] rounded-sm"
+          >
             {item}
             <MicSvg />
           </button>
         ))}
       </section>
       <section className="px-4">
-        <Title title="확실한 알리바이가 필요하다면?" to="/community" />
+        <Title title="확실한 알리바이가 필요하다면?" to="/community/free" />
       </section>
     </main>
   );
