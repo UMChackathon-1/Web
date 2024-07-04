@@ -20,8 +20,8 @@ export default function WritePost() {
     <div className="px-4">
       <Header />
       <div className="flex flex-col">
-        <div className="flex flex-col mb-5">
-          <label htmlFor="title" className="mb-2 text-white">
+        <div className="flex flex-col mb-8">
+          <label htmlFor="title" className="pl-1 mb-3 text-white">
             제목을 입력해주세요
           </label>
           <input
@@ -30,11 +30,11 @@ export default function WritePost() {
             value={title}
             onChange={handleTitle}
             placeholder="제목을 입력해주세요"
-            className="p-2 pl-3 text-sm rounded-lg"
+            className="p-4 text-sm rounded-lg opacity-70"
           />
         </div>
-        <div className="flex flex-col mb-5">
-          <label htmlFor="content" className="mb-2 text-white">
+        <div className="flex flex-col mb-8">
+          <label htmlFor="content" className="pl-1 mb-3 text-white">
             내용을 입력해주세요
           </label>
           <textarea
@@ -42,7 +42,7 @@ export default function WritePost() {
             value={content}
             onChange={handleContent}
             placeholder="내용을 입력해주세요"
-            className="p-2 pl-3 text-sm rounded-lg h-[300px]"
+            className="p-4 text-sm rounded-lg h-[300px] opacity-70"
           />
         </div>
       </div>
