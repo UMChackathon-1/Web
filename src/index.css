@@ -7,10 +7,13 @@
   src: url("./assets/fonts/Pretendard-Medium.woff2") format("woff2");
 }
 
+:root {
+  background-color: #191919;
+}
+
 body {
   font-family: "Pretendard";
   max-width: 400px;
   height: 100dvh;
   margin: 0 auto;
-  border: 1px solid black;
 }

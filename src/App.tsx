@@ -1,18 +1,22 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "@pages/Home";
 import NotFound from "@pages/404";
-import Community from "@pages/Community";
 import Profile from "@pages/Profile";
-import Layout from "@layout/Layout";
+import Photo from "@pages/Photo";
+import Document from "@pages/Document";
+import Voice from "@pages/Voice";
+import Community from "@pages/Community";
 
 function App() {
   return (
     <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/community" element={<Community />} />
-        <Route path="/profile" element={<Profile />} />
-      </Route>
+      <Route path="/" element={<Home />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/photo" element={<Photo />} />
+      <Route path="/document" element={<Document />} />
+      <Route path="/voice" element={<Voice />} />
+      <Route path="/community" element={<Community />} />
+      <Route path="/editform/:id" element={<></>} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
