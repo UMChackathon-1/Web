@@ -29,22 +29,22 @@ const ttsItems = ["안녕하세요 어머니!!", "잘 놀다 갈게요~", "감�
 const freeBoardData = [
   {
     id: 1,
-    title: "자유게시판 게시글 1",
-    writer: "안녕12",
+    title: "친구 집에서 잔다고 할 때 꿀팁!",
+    writer: "레니",
     createdAt: "17:17",
     viewCount: 3,
   },
   {
     id: 2,
-    title: "자유게시판 게시글 2",
-    writer: "촉촉한 초코칩3",
+    title: "이런 공부 모임이면 핑계대기 더 좋다!",
+    writer: "학점 C 뿌리기",
     createdAt: "14:20",
     viewCount: 10,
   },
   {
     id: 3,
-    title: "자유게시판 게시글 3",
-    writer: "안녕12",
+    title: "어떤 교내 행사가 외박 핑계대기 좋을까요?ㅠㅠ",
+    writer: "오춘기",
     createdAt: "17:17",
     viewCount: 3,
   },
@@ -94,7 +94,7 @@ export default function Home() {
       </section>
       <section className="px-4">
         <Title title="확실한 알리바이가 필요하다면?" to="/community/free" />
-        <PostItems postData={freeBoardData.slice(0, 3)} />
+        <PostItems postData={freeBoardData} />
       </section>
     </main>
   );
