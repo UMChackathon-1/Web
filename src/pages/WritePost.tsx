@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
-import ProfileSvg from "@assets/profile.svg";
 import { ChangeEvent, useState } from "react";
+import Header from "@components/Header";
 
 export default function WritePost() {
   const [title, setTitle] = useState<string>("");
@@ -16,17 +15,7 @@ export default function WritePost() {
 
   return (
     <div>
-      <header className="flex items-center justify-between px-4 mt-4 mb-9">
-        <Link to="/">
-          <h1 className="text-[#6B6AFF] text-xl font-semibold">
-            Party Tonight
-          </h1>
-        </Link>
-        <Link to="/profile">
-          <ProfileSvg color="#6B6AFF" />
-        </Link>
-      </header>
-
+      <Header />
       <input
         type="text"
         value={title}

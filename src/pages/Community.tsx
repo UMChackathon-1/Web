@@ -3,6 +3,7 @@ import PostItems from "@components/community/postItems";
 import { Link, useParams } from "react-router-dom";
 import ProfileSvg from "@assets/profile.svg";
 import PlusButtonSvg from "@assets/plusButton.svg";
+import Header from "@components/Header";
 
 const freeBoardData = [
   {
@@ -155,16 +156,7 @@ export default function Community() {
 
   return (
     <div className="relative">
-      <header className="flex items-center justify-between px-4 mt-4 mb-9">
-        <Link to="/">
-          <h1 className="text-[#6B6AFF] text-xl font-semibold">
-            Party Tonight
-          </h1>
-        </Link>
-        <Link to="/profile">
-          <ProfileSvg color="#6B6AFF" />
-        </Link>
-      </header>
+      <Header />
       <NavBar />
       {type === "free" && <PostItems postData={freeBoardData} />}
       {type === "parttime" && <PostItems postData={partTimeBoardData} />}

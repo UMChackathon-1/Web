@@ -1,12 +1,11 @@
-import ProfileSvg from "@assets/profile.svg";
 import MicSvg from "@assets/mic.svg";
 import Title from "@components/home/Title";
-import { Link } from "react-router-dom";
 import outdoorSleep1 from "@assets/outdoor-sleep1.png";
 import outdoorSleep2 from "@assets/outdoor-sleep2.png";
 import outdoorSleep3 from "@assets/outdoor-sleep3.png";
 import Card from "@components/home/Card";
 import speak from "utils/speak";
+import Header from "@components/Header";
 
 const outDoorItems = [
   { title: "여자들끼리 바다여행", url: outdoorSleep1, likes: 20 },
@@ -25,16 +24,7 @@ const ttsItems = ["안녕하세요 어머니!!", "잘 놀다 갈게요~", "감�
 export default function Home() {
   return (
     <main>
-      <header className="flex items-center justify-between px-4 mb-9">
-        <Link to="/">
-          <h1 className="text-[#6B6AFF] text-xl font-semibold">
-            Party Tonight
-          </h1>
-        </Link>
-        <Link to="/profile">
-          <ProfileSvg color="#6B6AFF" />
-        </Link>
-      </header>
+      <Header />
       <section className="flex flex-col gap-2 px-4 mb-12">
         <Title title="외박 인증은 이 사진!" to="/photo" />
         <div className="flex flex-grow overflow-x-scroll">
