@@ -8,9 +8,9 @@ export default function Header() {
       <Link to="/">
         <Logo />
       </Link>
-      <Link to="/profile">
+      {/* <Link to="/profile">
         <ProfileSvg color="#6B6AFF" />
-      </Link>
+      </Link> */}
     </header>
   );
 }

@@ -62,30 +62,37 @@ export default function Editform() {
           backgroundImage: "url(" + forms[id].url + ")",
         }}
       ></div>
-      <h1 className="text-[20px] mt-5 m-2 text-white">{forms[id].name}</h1>
-      <div className="text-[18px] text-white text-opacity-50 m-2">@{forms[id].user}</div>
-      <form className="flex gap-2 flex-col mt-5 p-2">
-        {forms[id].texts.map((text, index) => (
-          <div key={index}>
-            <label htmlFor={text.name} className="text-[16px] text-[#BE9EFF]">
-              {text.name}
-            </label>
-            <input
-              type="text"
-              id={text.name}
-              placeholder={text.text}
-              value={texts[index]}
-              onChange={(e) => {
-                const new_texts = [...texts];
-                new_texts[index] = e.target.value;
-                setTexts(new_texts);
-              }}
-              className="h-[45px] placeholder-white bg-white bg-opacity-10 placeholder-opacity-50 border-2 border-[#8248F5] w-full rounded-md p-5 outline-none placeholder:text-[12px] text-white"
-            />
-          </div>
-        ))}
-        <DownLoadButton func={onClickDownloadButton}>이 정보로 템플릿 생성</DownLoadButton>
-      </form>
+      <div className="px-4">
+        <h1 className="text-[20px] mt-5 text-white">{forms[id].name}</h1>
+        <div className="text-[18px] text-white text-opacity-50">
+          @{forms[id].user}
+        </div>
+        <form className="flex flex-col gap-2 mt-5">
+          {forms[id].texts.map((text, index) => (
+            <div key={index}>
+              <label htmlFor={text.name} className="text-[16px] text-[#BE9EFF]">
+                {text.name}
+              </label>
+              <input
+                type="text"
+                id={text.name}
+                placeholder={text.text}
+                value={texts[index]}
+                onChange={(e) => {
+                  const new_texts = [...texts];
+                  new_texts[index] = e.target.value;
+                  setTexts(new_texts);
+                }}
+                className="h-[45px] placeholder-white bg-white bg-opacity-10 placeholder-opacity-50 border-2 border-[#8248F5] w-full rounded-md p-4 outline-none text-sm text-white"
+              />
+            </div>
+          ))}
+          <DownLoadButton func={onClickDownloadButton}>
+            이 정보로 템플릿 생성
+          </DownLoadButton>
+        </form>
+      </div>
+
       {exports && (
         <div
           className={`inline-block object-cover bg-cover relative`}
