@@ -1,4 +1,5 @@
 import Card from "@components/home/Card";
+import BackButton from "@components/BackButton";
 import outdoorSleep1 from "@assets/outdoor-sleep1.png";
 import { Link } from "react-router-dom";
 
@@ -14,6 +15,7 @@ const outDoorItems = [
 export default function Document() {
   return (
     <div>
+      <BackButton />
       <div className="flex flex-wrap gap-4">
         {outDoorItems.map((item) => {
           return (
