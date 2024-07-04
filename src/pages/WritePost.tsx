@@ -30,7 +30,7 @@ export default function WritePost() {
             value={title}
             onChange={handleTitle}
             placeholder="제목을 입력해주세요"
-            className="p-2 rounded-lg"
+            className="p-2 pl-3 text-sm rounded-lg"
           />
         </div>
         <div className="flex flex-col mb-5">
@@ -42,9 +42,12 @@ export default function WritePost() {
             value={content}
             onChange={handleContent}
             placeholder="내용을 입력해주세요"
-            className="p-2 rounded-lg"
+            className="p-2 pl-3 text-sm rounded-lg h-[300px]"
           />
         </div>
+      </div>
+      <div className="float-end w-fit cursor-pointer px-6 py-2 bg-[#6B6AFF] text-white rounded-lg">
+        작성하기
       </div>
     </div>
   );
