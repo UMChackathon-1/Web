@@ -2,6 +2,8 @@ import { formProps } from "@pages/Editform";
 import Hackathon from "./Hackathon.png";
 import Farm from "./Farm.png";
 import I2024 from "./2024.png";
+import Advertise from "./Advertise.png";
+import GameJam from "./GameJam.png";
 
 export const forms: formProps[] = [
   {
@@ -11,6 +13,7 @@ export const forms: formProps[] = [
     visible_height: 200,
     width: 1500,
     height: 750,
+    likes: 20,
     texts: [
       {
         name: "장소",
@@ -37,6 +40,7 @@ export const forms: formProps[] = [
     width: 700,
     height: 900,
     user: "user1",
+    likes: 13,
     texts: [
       {
         name: "년도",
@@ -71,6 +75,7 @@ export const forms: formProps[] = [
     width: 700,
     height: 1000,
     user: "user102354",
+    likes: 43,
     texts: [
       {
         name: "주제목",
@@ -102,6 +107,68 @@ export const forms: formProps[] = [
         top: 700,
         left: 350,
         font: 30,
+        color: "black",
+      },
+    ],
+  },
+  {
+    name: "무박 2일 광고캠프",
+    url: Advertise,
+    visible_height: 550,
+    width: 700,
+    height: 1000,
+    user: "user465331",
+    likes: 3,
+    texts: [
+      {
+        name: "캠프 일정",
+        text: "캠프 일정을 입력하세요",
+        top: 820,
+        left: 110,
+        font: 20,
+        color: "white",
+      },
+      {
+        name: "신청 기간",
+        text: "신청 기간를 입력하세요",
+        top: 869,
+        left: 450,
+        font: 20,
+        color: "white",
+      },
+    ],
+  },
+  {
+    name: "2024 넥슨 무박 3일 게임잼",
+    url: GameJam,
+    visible_height: 1000,
+    width: 700,
+    height: 2300,
+    user: "user8754",
+    likes: 10,
+    texts: [
+      {
+        name: "모집 기간",
+        text: "모집 기간을 입력하세요",
+        top: 1442,
+        left: 179,
+        font: 35,
+        color: "black",
+      },
+      {
+        name: "참가자 발표",
+        text: "참가자 발표 날짜를 입력하세요",
+        top: 1542,
+        left: 179,
+        font: 35,
+        color: "black",
+      },
+      {
+        name: "행사 기간(3일)",
+        text: "참가자 발표 날짜를 입력하세요",
+        top: 1642,
+        left: 179,
+        font: 35,
         color: "black",
       },
     ],

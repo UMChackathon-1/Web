@@ -8,17 +8,20 @@ import speak from "utils/speak";
 import Header from "@components/Header";
 import PostItems from "@components/community/postItems";
 import hackathon from "@assets/Hackathon.png";
+import { forms } from "@assets/forms";
 
+interface CardProps {
+  url: string;
+  title: string;
+  likes: number;
+  id: number;
+  mode: "photo" | "editform";
+  mr?: number;
+}
 const outDoorItems = [
   { id: 1, title: "여자들끼리 바다여행", url: outdoorSleep1, likes: 20 },
   { id: 2, title: "고등학교 친구들이랑 여행", url: outdoorSleep2, likes: 12 },
   { id: 3, title: "대학교 친구들이랑 글램핑", url: outdoorSleep3, likes: 30 },
-];
-
-const documentItems = [
-  { id: 1, title: "농활 양식", url: outdoorSleep1, likes: 20 },
-  { id: 2, title: "해커톤 양식", url: outdoorSleep2, likes: 12 },
-  { id: 3, title: "캠프 양식", url: outdoorSleep3, likes: 30 },
 ];
 
 const ttsItems = ["안녕하세요 어머니!!", "잘 놀다 갈게요~", "감사합니다!!"];
@@ -62,16 +65,28 @@ export default function Home() {
       </section>
       <section className="flex flex-col gap-2 px-4 mb-12">
         <Title title="성실한 학생이라도 땡땡이가 필요해" to="/document" />
-        <div className="flex flex-grow overflow-x-scroll">
-          {documentItems.map((item) => (
-            <Card mode="editform" mr={3} key={item.title} {...item} />
-          ))}
+        <div className="flex flex-grow overflow-x-scroll gap-3">
+          {forms.map((item, index) => {
+            const props: CardProps = {
+              title: item.name,
+              url: item.url,
+              likes: item.likes,
+              id: index + 1,
+              mode: "editform",
+              mr: 0,
+            };
+            return <Card key={index + 1} {...props} />;
+          })}
         </div>
       </section>
       <section className="flex flex-col gap-2 px-4 mb-12">
         <Title title="엄마한테 통화왔을 때 TTS" to="/voice" />
         {ttsItems.map((item) => (
-          <button onClick={() => speak(item)} key={item} className="flex justify-between px-4 py-2 w-full bg-[#D9D9D9] rounded-sm">
+          <button
+            onClick={() => speak(item)}
+            key={item}
+            className="flex justify-between px-4 py-2 w-full bg-[#D9D9D9] rounded-sm"
+          >
             {item}
             <MicSvg />
           </button>

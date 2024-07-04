@@ -5,6 +5,7 @@ import html2canvas from "html2canvas";
 import BackButton from "@components/BackButton";
 import { forms } from "@assets/forms";
 import { useParams } from "react-router-dom";
+import { DownLoadButton } from "@components/Lists/DownLoadButton";
 
 export interface formProps {
   name: string;
@@ -13,6 +14,7 @@ export interface formProps {
   width: number;
   height: number;
   user: string;
+  likes: number;
   texts: Array<{
     name: string;
     text: string;
@@ -51,7 +53,7 @@ export default function Editform() {
 
   return (
     <>
-      <BackButton />
+      <BackButton mx={4} />
       <div
         className={`inline-block object-cover bg-cover relative`}
         style={{
@@ -61,9 +63,7 @@ export default function Editform() {
         }}
       ></div>
       <h1 className="text-[20px] mt-5 m-2 text-white">{forms[id].name}</h1>
-      <div className="text-[18px] text-white text-opacity-50 m-2">
-        @{forms[id].user}
-      </div>
+      <div className="text-[18px] text-white text-opacity-50 m-2">@{forms[id].user}</div>
       <form className="flex gap-2 flex-col mt-5 p-2">
         {forms[id].texts.map((text, index) => (
           <div key={index}>
@@ -84,13 +84,7 @@ export default function Editform() {
             />
           </div>
         ))}
-        <button
-          type="button"
-          onClick={onClickDownloadButton}
-          className="bg-[#8248F5] rounded-full mt-8 h-[44px] w-full text-white px-5 py-2 text-[20px]"
-        >
-          이 정보로 템플릿 생성
-        </button>
+        <DownLoadButton func={onClickDownloadButton}>이 정보로 템플릿 생성</DownLoadButton>
       </form>
       {exports && (
         <div

@@ -20,17 +20,12 @@ export const Photo = () => {
   // const id = parseInt(params.id?.toString() || "1");
   return (
     <div>
-      <BackButton />
+      <BackButton mx={4} />
       <div className="w-full flex items-center">
-        <img
-          src={outDoorItems.url}
-          className={`min-w-[122px] h-[300px] bg-no-repeat mx-auto`}
-        />
+        <img src={outDoorItems.url} className={`min-w-[122px] h-[300px] bg-no-repeat mx-auto`} />
       </div>
       <h1 className="text-[20px] mt-5 m-2 text-white">{outDoorItems.title}</h1>
-      <div className="text-[18px] text-white text-opacity-50 m-2">
-        @{outDoorItems.user}
-      </div>
+      <div className="text-[18px] text-white text-opacity-50 m-2">@{outDoorItems.user}</div>
       <Likes {...outDoorItems} />
       <DownLoadButton
         func={() => {
