@@ -1,10 +1,12 @@
 import ProfileSvg from "@assets/profile.svg";
+import MicSvg from "@assets/mic.svg";
 import Title from "@components/home/Title";
 import { Link } from "react-router-dom";
 import outdoorSleep1 from "@assets/outdoor-sleep1.png";
 import outdoorSleep2 from "@assets/outdoor-sleep2.png";
 import outdoorSleep3 from "@assets/outdoor-sleep3.png";
 import Card from "@components/home/Card";
+import speak from "utils/speak";
 
 const outDoorItems = [
   { title: "여자들끼리 바다여행", url: outdoorSleep1, likes: 20 },
@@ -17,6 +19,8 @@ const documentItems = [
   { title: "해커톤 양식", url: outdoorSleep2, likes: 12 },
   { title: "캠프 양식", url: outdoorSleep3, likes: 30 },
 ];
+
+const ttsItems = ["안녕하세요 어머니!!", "잘 놀다 갈게요~", "감사합니다!!"];
 
 export default function Home() {
   return (
@@ -45,8 +49,14 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="px-4">
+      <section className="px-4 flex flex-col gap-2 mb-12">
         <Title title="엄마한테 통화왔을 때 TTS" to="/voice" />
+        {ttsItems.map((item) => (
+          <button onClick={() => speak(item)} key={item} className="flex justify-between px-4 py-2 w-full bg-[#D9D9D9] rounded-sm">
+            {item}
+            <MicSvg />
+          </button>
+        ))}
       </section>
       <section className="px-4">
         <Title title="확실한 알리바이가 필요하다면?" to="/community" />
