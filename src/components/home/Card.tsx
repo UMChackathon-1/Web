@@ -14,7 +14,7 @@ export default function Card({ url, title, likes }: CardProps) {
           <ThumbsUpSvg />
           {likes}
         </div>
-        <span className="p-2 bg-gradient-to-b from-[rgba(35,1,79,0)] to-[#23014F]">{title}</span>
+        <span className="p-2 truncate bg-gradient-to-b from-[rgba(35,1,79,0)] to-[#23014F]">{title}</span>
       </div>
     </div>
   );
