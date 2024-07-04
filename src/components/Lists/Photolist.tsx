@@ -15,7 +15,7 @@ export default function Photo() {
   return (
     <div>
       <BackButton />
-      <div className="flex flex-wrap gap-4 mt-5">
+      <div className="flex flex-wrap gap-1 mt-5 justify-center">
         {outDoorItems.map((item) => (
           <Card mode="photo" key={item.id} {...item} mr={0} />
         ))}
