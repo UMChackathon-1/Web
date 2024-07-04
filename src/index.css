@@ -17,3 +17,9 @@ body {
   height: 100dvh;
   margin: 0 auto;
 }
+
+@layer base {
+  img {
+    @apply inline-block;
+  }
+}
