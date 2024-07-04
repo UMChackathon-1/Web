@@ -69,7 +69,11 @@ export default function Home() {
       <section className="flex flex-col gap-2 px-4 mb-12">
         <Title title="엄마한테 통화왔을 때 TTS" to="/voice" />
         {ttsItems.map((item) => (
-          <button onClick={() => speak(item)} key={item} className="flex justify-between px-4 py-2 w-full bg-[#D9D9D9] rounded-sm">
+          <button
+            onClick={() => speak(item)}
+            key={item}
+            className="flex justify-between px-4 py-2 w-full bg-[#D9D9D9] rounded-sm"
+          >
             {item}
             <MicSvg />
           </button>
