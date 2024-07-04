@@ -9,12 +9,12 @@
 
 :root {
   background-color: #191919;
+  padding: 16px 0 32px;
 }
 
 body {
   font-family: "Pretendard";
   max-width: 400px;
-  height: 100dvh;
   margin: 0 auto;
 }
 

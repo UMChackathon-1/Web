@@ -9,6 +9,7 @@ import Documentlist from "@components/Lists/Documentlist";
 import Voicelist from "@components/Lists/Voicelist";
 import Community from "@pages/Community";
 import Editform from "@pages/Editform";
+import WritePost from "@pages/WritePost";
 
 function App() {
   return (
@@ -20,8 +21,9 @@ function App() {
       <Route path="/voice" element={<Voicelist />} />
       <Route path="/photo/:id" element={<Photo />} />
       <Route path="/voice/:id" element={<Voice />} />
-      <Route path="/community" element={<Community />} />
       <Route path="/editform/:id" element={<Editform />} />
+      <Route path="/community/:type" element={<Community />} />
+      <Route path="/writepost/:type" element={<WritePost />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
