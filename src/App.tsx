@@ -16,6 +16,7 @@ function App() {
       <Route path="/document" element={<Document />} />
       <Route path="/voice" element={<Voice />} />
       <Route path="/community" element={<Community />} />
+      <Route path="/editform/:id" element={<></>} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
