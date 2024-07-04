@@ -19,18 +19,20 @@ export default function Card({
   mr = 3,
 }: CardProps) {
   const path = `/${mode}/${id}`;
+
   return (
     <Link
       to={path}
-      className={`min-w-[122px] h-[148px] bg-no-repeat bg-cover`}
+      className={`min-w-[122px] h-[148px] bg-no-repeat bg-cover relative group rounded-lg`}
       style={{ backgroundImage: `url(${url})`, marginRight: mr * 4 }}
     >
-      <div className="flex flex-col text-white font-bold text-xs justify-between h-full">
-        <div className="flex items-center gap-2 p-2">
+      <div className="absolute inset-0 transition-opacity duration-300 bg-black rounded-lg opacity-0 group-hover:opacity-40"></div>
+      <div className="absolute inset-0 flex flex-col justify-between h-full text-xs font-bold text-white transition-opacity duration-300 rounded-lg opacity-0 group-hover:opacity-100">
+        <div className="flex flex-row items-end p-2">
           <ThumbsUpSvg />
-          {likes}
+          <div className="ml-1">{likes}</div>
         </div>
-        <span className="p-2 truncate bg-gradient-to-b from-[rgba(35,1,79,0)] to-[#23014F]">
+        <span className="rounded-b-lg p-2 truncate bg-gradient-to-b from-[rgba(0,0,0,0.61)] to-[rgba(0,0,0,1)]">
           {title}
         </span>
       </div>

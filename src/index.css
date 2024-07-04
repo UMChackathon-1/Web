@@ -8,14 +8,16 @@
 }
 
 :root {
-  background-color: #191919;
-  padding: 16px 0 32px;
+  background-color: #ffffff;
 }
 
 body {
+  background-color: #191919;
   font-family: "Pretendard";
   max-width: 400px;
+  min-height: 100dvh;
   margin: 0 auto;
+  padding-bottom: 32px;
 }
 
 @layer base {

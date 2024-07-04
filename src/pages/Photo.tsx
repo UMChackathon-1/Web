@@ -9,9 +9,9 @@ const outDoorItems = {
   title: "여자들끼리 바다여행",
   url: outdoorSleep1,
   user: "user1",
-  likes: 20,
-  dislikes: 10,
-  downloads: 5,
+  likeCount: 20,
+  dislikeCount: 10,
+  downloadCount: 5,
   id: 1,
 };
 
@@ -21,20 +21,27 @@ export const Photo = () => {
   return (
     <div>
       <BackButton mx={4} />
-      <div className="w-full flex items-center">
-        <img src={outDoorItems.url} className={`min-w-[122px] h-[300px] bg-no-repeat mx-auto`} />
+      <div className="flex items-center w-full">
+        <img
+          src={outDoorItems.url}
+          className={`min-w-[122px] h-[300px] bg-no-repeat mx-auto`}
+        />
       </div>
-      <h1 className="text-[20px] mt-5 m-2 text-white">{outDoorItems.title}</h1>
-      <div className="text-[18px] text-white text-opacity-50 m-2">@{outDoorItems.user}</div>
-      <Likes {...outDoorItems} />
-      <DownLoadButton
-        func={() => {
-          downloadFile(outDoorItems.url, outDoorItems.title);
-        }}
-        download
-      >
-        다운로드
-      </DownLoadButton>
+      <div className="px-4">
+        <h1 className="text-[20px] mt-5 text-white">{outDoorItems.title}</h1>
+        <div className="text-[18px] text-white text-opacity-50">
+          @{outDoorItems.user}
+        </div>
+        <Likes {...outDoorItems} />
+        <DownLoadButton
+          func={() => {
+            downloadFile(outDoorItems.url, outDoorItems.title);
+          }}
+          download
+        >
+          다운로드
+        </DownLoadButton>
+      </div>
     </div>
   );
 };

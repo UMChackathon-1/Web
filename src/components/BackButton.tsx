@@ -7,7 +7,7 @@ interface BackButtonProps {
 const BackButton = ({ mx = 0 }: BackButtonProps) => {
   const handleGoBack = () => window.history.back();
   return (
-    <button onClick={handleGoBack} style={{ margin: `0px ${mx * 4}px` }}>
+    <button onClick={handleGoBack} className="p-4">
       <ArrowLeft color="#FFFFFF" />
     </button>
   );

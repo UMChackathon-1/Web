@@ -4,7 +4,7 @@ import Logo from "@assets/logo.svg";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between px-4 mb-5">
+    <header className="flex items-center justify-between px-4 pt-4 mb-5">
       <Link to="/">
         <Logo />
       </Link>

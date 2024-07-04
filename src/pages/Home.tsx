@@ -65,7 +65,7 @@ export default function Home() {
       </section>
       <section className="flex flex-col gap-2 px-4 mb-12">
         <Title title="성실한 학생이라도 땡땡이가 필요해" to="/document" />
-        <div className="flex flex-grow overflow-x-scroll gap-3">
+        <div className="flex flex-grow gap-3 overflow-x-scroll">
           {forms.map((item, index) => {
             const props: CardProps = {
               title: item.name,
@@ -82,14 +82,14 @@ export default function Home() {
       <section className="flex flex-col gap-2 px-4 mb-12">
         <Title title="엄마한테 통화왔을 때 TTS" to="/voice" />
         {ttsItems.map((item) => (
-          <button
+          <div
             onClick={() => speak(item)}
             key={item}
-            className="flex justify-between px-4 py-2 w-full bg-[#D9D9D9] rounded-sm"
+            className="flex justify-between px-4 py-2 w-full bg-[#D9D9D9] rounded-sm cursor-pointer hover:bg-[#8248F5] hover:text-white"
           >
             {item}
             <MicSvg />
-          </button>
+          </div>
         ))}
       </section>
       <section className="px-4">
