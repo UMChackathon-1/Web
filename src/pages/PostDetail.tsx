@@ -5,38 +5,42 @@ import BlueLikeSvg from "@assets/thumbs-up-blue.svg";
 import GrayLikeSvg from "@assets/thumbs-up-gray.svg";
 import RedUnLikeSvg from "@assets/thumbs-down-red.svg";
 import GrayUnLikeSvg from "@assets/thumbs-down-gray.svg";
+import { useLocation } from "react-router-dom";
 
-const dummyData = {
-  id: 1,
-  title: "자유게시판 게시글 1",
-  content:
-    "자유게시판 게시글 내용입니다. 꽁꽁 얼어붙은 한강 위로 고양이가 걸어다닙니다. 꽁꽁 얼어붙은 고양이 위로 한강이가 걸어다닙니다.",
-  writer: "안녕12",
-  profileImage: ProfileExample,
-  createdAt: "17:17",
-  likeCount: 10,
-  isLiked: true,
-  unLikeCount: 3,
-  isUnLiked: false,
-  viewCount: 3,
-  comment: [
-    {
-      id: 1,
-      writer: "작성자1",
-      profileImage: ProfileExample,
-      content: "댓글 예시1",
-    },
-    {
-      id: 2,
-      writer: "작성자2",
-      profileImage: ProfileExample,
-      content: "댓글 예시2",
-    },
-  ],
-};
+// const dummyData = {
+//   id: 1,
+//   title: "자유게시판 게시글 1",
+//   content:
+//     "자유게시판 게시글 내용입니다. 꽁꽁 얼어붙은 한강 위로 고양이가 걸어다닙니다. 꽁꽁 얼어붙은 고양이 위로 한강이가 걸어다닙니다.",
+//   writer: "안녕12",
+//   profileImage: ProfileExample,
+//   createdAt: "17:17",
+//   likeCount: 10,
+//   isLiked: true,
+//   unLikeCount: 3,
+//   isUnLiked: false,
+//   viewCount: 3,
+//   comment: [
+//     {
+//       id: 1,
+//       writer: "작성자1",
+//       profileImage: ProfileExample,
+//       content: "댓글 예시1",
+//     },
+//     {
+//       id: 2,
+//       writer: "작성자2",
+//       profileImage: ProfileExample,
+//       content: "댓글 예시2",
+//     },
+//   ],
+// };
 
 export default function PostDetail() {
-  const [detailData, setDetailData] = useState(dummyData);
+  const location = useLocation();
+  const detailData = location.state.postData;
+
+  // const [detailData, setDetailData] = useState();
   const [comment, setComment] = useState<string>("");
 
   const handleComment = (e: ChangeEvent<HTMLInputElement>) => {
@@ -56,11 +60,11 @@ export default function PostDetail() {
         </div>
 
         <div className="mb-5 text-xl text-white">{detailData.title}</div>
-        <div className="text-white">{dummyData.content}</div>
+        <div className="text-white">{detailData.content}</div>
       </div>
 
       <div className="p-4">
-        {dummyData.comment.map((data) => (
+        {detailData.comment.map((data) => (
           <div key={data.id} className="flex flex-col pb-5">
             <div className="font-semibold text-white">{data.writer}</div>
             <div className="font-medium text-white">{data.content}</div>
