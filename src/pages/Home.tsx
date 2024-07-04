@@ -1,6 +1,16 @@
 import ProfileSvg from "@assets/profile.svg";
 import Title from "@components/home/Title";
 import { Link } from "react-router-dom";
+import outdoorSleep1 from "@assets/outdoor-sleep1.png";
+import outdoorSleep2 from "@assets/outdoor-sleep2.png";
+import outdoorSleep3 from "@assets/outdoor-sleep3.png";
+import Card from "@components/home/Card";
+
+const outDoorItems = [
+  { title: "여자들끼리 바다여행", url: outdoorSleep1, likes: 20 },
+  { title: "여자들끼리 바다여행", url: outdoorSleep2, likes: 12 },
+  { title: "여자들끼리 바다여행", url: outdoorSleep3, likes: 30 },
+];
 
 export default function Home() {
   return (
@@ -15,6 +25,11 @@ export default function Home() {
       </header>
       <section className="px-4">
         <Title title="외박 인증은 이 사진!" to="/photo" />
+        <div className="flex flex-grow overflow-x-scroll">
+          {outDoorItems.map((item) => (
+            <Card {...item} />
+          ))}
+        </div>
       </section>
       <section className="px-4">
         <Title title="성실한 학생이라도 땡땡이가 필요해" to="/document" />
