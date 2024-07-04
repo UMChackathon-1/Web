@@ -1,7 +1,6 @@
-import ArrowLeft from "@assets/arrow-left.svg";
 import MicSvg from "@assets/mic.svg";
+import BackButton from "@components/BackButton";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import speak from "utils/speak";
 
 export default function Voice() {
@@ -17,9 +16,7 @@ export default function Voice() {
 
   return (
     <main className="px-4">
-      <Link to="/">
-        <ArrowLeft color="#FFFFFF" />
-      </Link>
+      <BackButton />
       <section className="flex flex-col gap-2 mt-5 mb-12">
         <h1 className="text-lg font-bold text-[#BE9EFF]">내용 입력하기</h1>
         <textarea
