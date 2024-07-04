@@ -1,7 +1,6 @@
 import NavBar from "@components/community/navBar";
 import PostItems from "@components/community/postItems";
-import { Link, useParams } from "react-router-dom";
-import ProfileSvg from "@assets/profile.svg";
+import { useNavigate, useParams } from "react-router-dom";
 import PlusButtonSvg from "@assets/plusButton.svg";
 import Header from "@components/Header";
 
@@ -152,7 +151,12 @@ const partTimeBoardData = [
 ];
 
 export default function Community() {
-  const { type } = useParams();
+  const { type } = useParams<string>();
+  const navigate = useNavigate();
+
+  const toWrite = (type: string) => {
+    navigate(`/writepost/${type}`);
+  };
 
   return (
     <div className="relative">
@@ -160,7 +164,10 @@ export default function Community() {
       <NavBar />
       {type === "free" && <PostItems postData={freeBoardData} />}
       {type === "parttime" && <PostItems postData={partTimeBoardData} />}
-      <div className="absolute cursor-pointer bottom-2 right-2">
+      <div
+        className="absolute cursor-pointer bottom-2 right-2"
+        onClick={() => toWrite(type)}
+      >
         <PlusButtonSvg />
       </div>
     </div>
