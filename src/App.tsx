@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import NotFound from "./pages/404";
+import Home from "@pages/Home";
+import NotFound from "@pages/404";
 
 function App() {
   return (
