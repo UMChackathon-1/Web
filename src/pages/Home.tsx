@@ -7,17 +7,18 @@ import Card from "@components/home/Card";
 import speak from "utils/speak";
 import Header from "@components/Header";
 import PostItems from "@components/community/postItems";
+import hackathon from "@assets/Hackathon.png";
 
 const outDoorItems = [
-  { title: "여자들끼리 바다여행", url: outdoorSleep1, likes: 20 },
-  { title: "고등학교 친구들이랑 여행", url: outdoorSleep2, likes: 12 },
-  { title: "대학교 친구들이랑 글램핑", url: outdoorSleep3, likes: 30 },
+  { id: 1, title: "여자들끼리 바다여행", url: outdoorSleep1, likes: 20 },
+  { id: 2, title: "고등학교 친구들이랑 여행", url: outdoorSleep2, likes: 12 },
+  { id: 3, title: "대학교 친구들이랑 글램핑", url: outdoorSleep3, likes: 30 },
 ];
 
 const documentItems = [
-  { title: "농활 양식", url: outdoorSleep1, likes: 20 },
-  { title: "해커톤 양식", url: outdoorSleep2, likes: 12 },
-  { title: "캠프 양식", url: outdoorSleep3, likes: 30 },
+  { id: 1, title: "농활 양식", url: outdoorSleep1, likes: 20 },
+  { id: 2, title: "해커톤 양식", url: outdoorSleep2, likes: 12 },
+  { id: 3, title: "캠프 양식", url: outdoorSleep3, likes: 30 },
 ];
 
 const ttsItems = ["안녕하세요 어머니!!", "잘 놀다 갈게요~", "감사합니다!!"];
@@ -50,11 +51,12 @@ export default function Home() {
   return (
     <main>
       <Header />
+      <img src={hackathon} alt="광고 이미지" className="mb-9" />
       <section className="flex flex-col gap-2 px-4 mb-12">
         <Title title="외박 인증은 이 사진!" to="/photo" />
         <div className="flex flex-grow overflow-x-scroll">
           {outDoorItems.map((item) => (
-            <Card mr={3} key={item.title} {...item} />
+            <Card mode="photo" mr={3} key={item.title} {...item} />
           ))}
         </div>
       </section>
@@ -62,18 +64,14 @@ export default function Home() {
         <Title title="성실한 학생이라도 땡땡이가 필요해" to="/document" />
         <div className="flex flex-grow overflow-x-scroll">
           {documentItems.map((item) => (
-            <Card mr={3} key={item.title} {...item} />
+            <Card mode="editform" mr={3} key={item.title} {...item} />
           ))}
         </div>
       </section>
       <section className="flex flex-col gap-2 px-4 mb-12">
         <Title title="엄마한테 통화왔을 때 TTS" to="/voice" />
         {ttsItems.map((item) => (
-          <button
-            onClick={() => speak(item)}
-            key={item}
-            className="flex justify-between px-4 py-2 w-full bg-[#D9D9D9] rounded-sm"
-          >
+          <button onClick={() => speak(item)} key={item} className="flex justify-between px-4 py-2 w-full bg-[#D9D9D9] rounded-sm">
             {item}
             <MicSvg />
           </button>
