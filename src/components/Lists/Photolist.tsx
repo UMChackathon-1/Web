@@ -16,7 +16,7 @@ export default function Photo() {
   return (
     <div>
       <BackButton />
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-4 mt-5">
         {outDoorItems.map((item) => {
           return (
             <Link to={`/photo/${item.id}`}>
