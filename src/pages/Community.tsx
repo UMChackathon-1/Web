@@ -1,9 +1,9 @@
 import BottomNavigation from "@components/BottomNavigation";
 
-export default function Home() {
+export default function Community() {
   return (
     <>
-      <h1>This is Home.</h1>
+      <h1>Community</h1>
       <BottomNavigation />
     </>
   );

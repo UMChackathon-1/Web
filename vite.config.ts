@@ -4,5 +4,22 @@ import svgr from "vite-plugin-svgr";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  plugins: [react(), svgr(), tsconfigPaths()],
+  plugins: [
+    react(),
+    tsconfigPaths(),
+    svgr({
+      // Use SVGR only for SVG imports
+      include: "**/*.svg",
+    }),
+  ],
+  esbuild: {
+    loader: "tsx",
+    include: [
+      // Only process files in src directory with SVGR
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "src/**/*.svg",
+    ],
+    exclude: ["node_modules"],
+  },
 });
