@@ -1,7 +1,6 @@
 import Card from "@components/home/Card";
 import BackButton from "@components/BackButton";
 import outdoorSleep1 from "@assets/outdoor-sleep1.png";
-import { Link } from "react-router-dom";
 
 const outDoorItems = [
   { title: "여자들끼리 바다여행", url: outdoorSleep1, likes: 20, id: 1 },
@@ -17,13 +16,9 @@ export default function Document() {
     <div>
       <BackButton />
       <div className="flex flex-wrap gap-4 mt-5">
-        {outDoorItems.map((item) => {
-          return (
-            <Link to={`/editform/${item.id}`}>
-              <Card {...item} mr={0} />
-            </Link>
-          );
-        })}
+        {outDoorItems.map((item) => (
+          <Card key={item.id} mode="editform" {...item} mr={0} />
+        ))}
       </div>
     </div>
   );
