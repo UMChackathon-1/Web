@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import html2canvas from "html2canvas";
+import BackButton from "@components/BackButton";
 import { forms } from "@assets/forms";
 import { useParams } from "react-router-dom";
 
@@ -50,6 +51,7 @@ export default function Editform() {
 
   return (
     <>
+      <BackButton />
       <div
         className={`inline-block object-cover bg-cover relative`}
         style={{

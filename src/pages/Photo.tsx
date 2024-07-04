@@ -3,6 +3,7 @@ import outdoorSleep1 from "@assets/outdoor-sleep1.png";
 import { Likes } from "@components/Lists/Likes";
 import { DownLoadButton } from "@components/Lists/DownLoadButton";
 import { downloadFile } from "utils/downloadFile";
+import BackButton from "@components/BackButton";
 
 const outDoorItems = {
   title: "여자들끼리 바다여행",
@@ -19,6 +20,7 @@ export const Photo = () => {
   // const id = parseInt(params.id?.toString() || "1");
   return (
     <div>
+      <BackButton />
       <div className="w-full flex items-center">
         <img
           src={outDoorItems.url}
