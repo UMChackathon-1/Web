@@ -23,12 +23,12 @@ export default function PostItems({ postData }: Props) {
   };
 
   return (
-    <div className="mt-4">
-      {postData.map((data) => (
+    <div className="p-4">
+      {postData.map((data, index) => (
         <div
           key={data.id}
-          className={`p-4 border-b-2 border-b-gray-500 ${
-            postData.length === data.id && "border-b-0"
+          className={`p-4 px-2 border-b-2 border-b-gray-500 ${
+            index === postData.length - 1 ? "border-b-0" : ""
           }`}
           onClick={() => handleClick(type, data.id)}
         >
