@@ -5,8 +5,8 @@ import PlusButtonSvg from "@assets/plusButton.svg";
 import Header from "@components/Header";
 import { useState } from "react";
 
-import { freeDummyData } from "dummies/freeDummyData";
-import { partTimeDummyData } from "dummies/partTimeDummyData";
+import { freeDummyData } from "@pages/freeDummyData";
+import { partTimeDummyData } from "@pages/partTimeDummyData";
 
 export default function Community() {
   const { type } = useParams<string>();

@@ -6,7 +6,7 @@ import Header from "@components/Header";
 import PostItems from "@components/community/postItems";
 import hackathon from "@assets/Hackathon.png";
 import { forms } from "@assets/forms";
-import { outDoorItems } from "dummies/outDoorItems";
+import { outDoorItems } from "@components/Lists/outDoorItems";
 
 interface CardProps {
   url: string;

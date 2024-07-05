@@ -1,6 +1,6 @@
 import Card from "@components/home/Card";
 import BackButton from "@components/BackButton";
-import { outDoorItems } from "dummies/outDoorItems";
+import { outDoorItems } from "@components/Lists/outDoorItems";
 import PlusButtonSvg from "@assets/plusButton.svg";
 import styled from "styled-components";
 import { ChangeEvent, useRef, useState } from "react";

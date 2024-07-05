@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 
-import { freeDummyData } from "dummies/freeDummyData";
-import { partTimeDummyData } from "dummies/partTimeDummyData";
+import { freeDummyData } from "@pages/freeDummyData";
+import { partTimeDummyData } from "@pages/partTimeDummyData";
 
 interface Props {
   postData: {
