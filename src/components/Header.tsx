@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import Logo from "@assets/logo.svg";
 import { useEffect, useState } from "react";
 import { getProfile } from "@server/api/user";
+import DefaultImage from "@assets/default_profile.jpeg";
 
 export default function Header() {
   const [profileData, setProfileData] = useState({
-    imageUrl: "",
-    nickname: "",
+    imageUrl: DefaultImage,
+    nickname: "이면지",
   });
 
   useEffect(() => {
