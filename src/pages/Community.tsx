@@ -5,8 +5,8 @@ import PlusButtonSvg from "@assets/plusButton.svg";
 import Header from "@components/Header";
 import { useState } from "react";
 
-import { freeDummyData } from "@pages/freeDummyData";
-import { partTimeDummyData } from "@pages/partTimeDummyData";
+import { freeDummyData } from "@pages/freeData";
+import { partTimeDummyData } from "@pages/partTimeData";
 
 export default function Community() {
   const { type } = useParams<string>();
@@ -17,7 +17,9 @@ export default function Community() {
   };
 
   const [selectedOption, setSelectedOption] = useState<string>("total");
+  // @ts-ignore
   const [freeBoardData, setFreeBoardData] = useState(freeDummyData);
+  // @ts-ignore
   const [partTimeBoardData, setPartTimeBoardData] = useState(partTimeDummyData);
 
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -48,6 +50,7 @@ export default function Community() {
       {type === "parttime" && <PostItems postData={sortedPartTimeBoardData} />}
       <div
         className="absolute cursor-pointer bottom-2 right-2"
+        // @ts-ignore
         onClick={() => toWrite(type)}
       >
         <PlusButtonSvg />

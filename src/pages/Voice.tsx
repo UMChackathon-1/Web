@@ -31,6 +31,7 @@ export default function Voice() {
           onClick={handleSpeadk}
           className="text-white py-6 bg-[rgba(255,255,255,0.2)] flex flex-col w-full items-center gap-2 rounded-md outline-none"
         >
+          {/* @ts-ignore */}
           <MicSvg color="white" />
           생성한 오디오를 들어보세요
         </button>

@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 
-import { freeDummyData } from "@pages/freeDummyData";
-import { partTimeDummyData } from "@pages/partTimeDummyData";
+import { freeDummyData } from "@pages/freeData";
+import { partTimeDummyData } from "@pages/partTimeData";
 
 interface Props {
   postData: {
@@ -20,15 +20,18 @@ export default function PostItems({ postData }: Props) {
   const handleClick = (type: string, id: number) => {
     if (type === undefined) {
       navigate(`/community/free/${id}`, {
+        // @ts-ignore
         state: { postData: freeDummyData.find((item) => item.id === id) },
       });
     } else {
       if (type === "free") {
         navigate(`/community/${type}/${id}`, {
+          // @ts-ignore
           state: { postData: freeDummyData.find((item) => item.id === id) },
         });
       } else {
         navigate(`/community/${type}/${id}`, {
+          // @ts-ignore
           state: { postData: partTimeDummyData.find((item) => item.id === id) },
         });
       }
@@ -43,6 +46,7 @@ export default function PostItems({ postData }: Props) {
           className={`p-4 px-2 border-b-2 border-b-gray-500 ${
             index === postData.length - 1 ? "border-b-0" : ""
           }`}
+          // @ts-ignore
           onClick={() => handleClick(type, data.id)}
         >
           <div className="text-base font-semibold text-white cursor-pointer hover:text-[#6B6AFF]">

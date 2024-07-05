@@ -10,6 +10,7 @@ export default function Title({ title, to }: TitleProps) {
   return (
     <Link to={to} className="flex items-center gap-1">
       <h2 className="text-[#FFFFFF] text-lg font-extrabold">{title}</h2>
+      {/* @ts-ignore */}
       <ArrowRightSvg color="rgba(255,255,255,0.45)" />
     </Link>
   );

@@ -1,10 +1,5 @@
 import BackButton from "@components/BackButton";
 import { ChangeEvent, useState } from "react";
-import ProfileExample from "@assets/profileExample.png";
-import BlueLikeSvg from "@assets/thumbs-up-blue.svg";
-import GrayLikeSvg from "@assets/thumbs-up-gray.svg";
-import RedUnLikeSvg from "@assets/thumbs-down-red.svg";
-import GrayUnLikeSvg from "@assets/thumbs-down-gray.svg";
 import { useLocation } from "react-router-dom";
 
 // const dummyData = {
@@ -64,6 +59,7 @@ export default function PostDetail() {
       </div>
 
       <div className="p-4">
+        {/* @ts-ignore */}
         {detailData.comment.map((data) => (
           <div key={data.id} className="flex flex-col pb-5">
             <div className="font-semibold text-white">{data.writer}</div>

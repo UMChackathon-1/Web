@@ -3,6 +3,7 @@ import Header from "@components/Header";
 import { useParams } from "react-router-dom";
 
 export default function WritePost() {
+  // @ts-ignore
   const { type } = useParams<string>();
 
   const [title, setTitle] = useState<string>("");
